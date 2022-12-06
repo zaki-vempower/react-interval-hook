@@ -16,13 +16,13 @@
 ## Install
 
 ```bash
-yarn add react-interval-hook
+yarn add @zaki1001/react-interval
 ```
 
 or
 
 ```bash
-npm install --save react-interval-hook
+npm install --save @zaki1001/react-interval
 ```
 
 ## Basic Usage
