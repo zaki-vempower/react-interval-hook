@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
+import { ReactInterval } from './Component';
 
 const noop = (): void => {};
 
@@ -22,7 +23,7 @@ export type IntervalHookResult = {
     isActive: IntervalHookIsActiveMethod;
 };
 
-export function useInterval(
+function useInterval(
     callback: IntervalHookCallback,
     interval = 1000,
     { onFinish = noop, autoStart = true, immediate = false, selfCorrecting = true }: IntervalHookOptions = {}
@@ -128,3 +129,10 @@ export function useInterval(
 
     return { start, stop, isActive };
 }
+
+
+export default {
+    useInterval,
+    ReactInterval
+}
+
