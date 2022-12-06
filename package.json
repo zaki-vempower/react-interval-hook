@@ -1,13 +1,13 @@
 {
-  "name": "react-interval-hook",
-  "version": "1.1.3",
-  "description": "React hook for using self-correcting setInterval, augmented by management methods (start, stop, isActive)",
-  "author": "minwork",
+  "name": "@zaki/react-interval",
+  "version": "1.0.0",
+  "description": "React hook for using self-correcting setInterval, augmented by management methods (start, stop, isActive) and also using React Class Based Component",
+  "author": "zaki",
   "license": "MIT",
-  "homepage": "https://github.com/minwork/react-interval-hook",
+  "homepage": "https://github.com/zaki-vempower/react-interval-hook",
   "repository": {
     "type": "git",
-    "url": "https://github.com/minwork/react-interval-hook.git"
+    "url": "https://github.com/zaki-vempower/react-interval-hook.git"
   },
   "keywords": [
     "interval",
@@ -56,11 +56,13 @@
       "@babel/preset-react"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "peerDependencies": {
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/core": "^7.13.15",
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.13.15",

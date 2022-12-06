@@ -102,6 +102,96 @@ const AdvancedExample = () => {
 };
 ```
 
+## Usage For React Class Based Components
+
+### Quickstart
+Start counting on render
+
+```js
+import { ReactInterval } from 'react-interval';
+
+const App = React.createClass({
+  getInitialState() {
+    return {count: 0};
+  },
+
+  render() {
+    const {count} = this.state;
+
+    return (
+      <div>
+        {count}
+        <ReactInterval timeout={1000} enabled={true}
+          callback={() => this.setState({count: this.state.count + 1})} />
+      </div>
+    );
+  }
+});
+```
+
+### Full example
+Change timeout on the fly, start and stop counting
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ReactInterval } from 'react-interval';
+
+const App = React.createClass({
+  getInitialState() {
+    return {
+      enabled: false,
+      timeout: 1000,
+      count: 0
+    };
+  },
+
+  render() {
+    const {timeout, enabled, count} = this.state;
+
+    return (
+      <div>
+        <ReactInterval {...{timeout, enabled}}
+          callback={() => this.setState({count: this.state.count + 1})} />
+
+        <input type="number" step="200" min="200" max="5000" value={this.state.timeout}
+          onChange={({target: {value}}) => this.setState({timeout: parseInt(value, 10)})} />&nbsp;
+
+        <button disabled={enabled} onClick={() => this.setState({enabled: true})}>
+          Start</button>&nbsp;
+
+        <button disabled={!enabled} onClick={() => this.setState({enabled: false})}>
+          Stop</button>&nbsp;
+
+        {count}
+      </div>
+    );
+  }
+});
+
+const appRoot = document.createElement('div');
+document.body.appendChild(appRoot);
+ReactDOM.render(<App />, appRoot);
+```
+
+## Options
+
+
+#### `callback`: PropTypes.func.isRequired
+
+Function repeatedly called after timeout
+
+
+#### `enabled`: PropTypes.bool (default: false)
+
+Should start timer?
+
+
+#### `timeout`: PropTypes.number (default: 1000)
+
+Timeout before each `callback` call
+
+
 ### Options
 
 | Name        |   Type   | Default  | Description                                                                                                                                                           |
@@ -123,4 +213,4 @@ const AdvancedExample = () => {
 
 ## License
 
-MIT © [minwork](https://github.com/minwork)
+MIT © [minwork](https://github.com/zaki-vempower)

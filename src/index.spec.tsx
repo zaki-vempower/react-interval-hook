@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { IntervalHookCallback, IntervalHookFinishCallback, useInterval } from '.';
+import { IntervalHookCallback, IntervalHookFinishCallback, useInterval } from './Reacthook';
 
 describe('Check isolated hook calls', () => {
     let callback: IntervalHookCallback;
